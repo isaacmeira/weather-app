@@ -1,18 +1,18 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import  getBackgroundController  from '../../entities/controllers/getBackgroundController';
+import React from 'react';
+
 import Container from '../../shared/Container/Container';
+import { useBackgroundHook } from '../../hooks/useBackground';
 
 import './styles.scss'
 
+
 const Main: React.FC = () => {
 
-  const [backGround, setBackground] = useState<string>('');
+  const background = useBackgroundHook();
 
-  useEffect(() => {
-    getBackgroundController().then(background => setBackground(background))
-  }, [backGround]) 
-
-  return (<Container background={{url: backGround, filter: 'darker'}} />)
+  return (<Container background={{url: background, filter: 'darker'}}>
+    <h1>teste</h1>
+  </Container>)
 }
 
 export default Main;
