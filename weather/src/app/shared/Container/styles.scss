@@ -1,0 +1,13 @@
+.default__container {
+  width: 100%;
+  height: 100%;
+
+  &--darker{
+    filter: brightness(40%)
+  }
+
+  &--blur{
+    filter: blur(5px)
+  }
+  
+}

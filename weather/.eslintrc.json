@@ -22,15 +22,9 @@
         "react/react-in-jsx-scope": "off",
         "spaced-comment": "error",
         "quotes": ["error", "single"],
-        "no-duplicate-imports": "error",
         "@typescript-eslint/consistent-type-definitions": ["error", "type"],
         "@typescript-eslint/consistent-type-imports": "warn",
-        "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error",
-        "sort-imports": "off",
-        "simple-import-sort/sort": "error",
         "import/order": "off",
-        "no-restricted-imports": ["error", { "patterns": ["../*"] }],
         "react/jsx-props-no-spreading": ["off"],
         "no-console": ["error", { "allow": ["warn", "error"] }]
     }
