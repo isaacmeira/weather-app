@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from '../../shared/Container/Container';
+import Container from '../../shared/Container';
 import { useBackgroundHook } from '../../hooks/useBackground';
 
 import './styles.scss'
@@ -11,7 +11,8 @@ const Main: React.FC = () => {
 
   const background = useBackgroundHook();
 
-  return (<Container background={{url: background, filter: 'darker'}}>
+  return (
+  <Container background={{url: background, filter: 'darker'}}>
     <Forecast />
   </Container>)
 }
