@@ -30,6 +30,7 @@ const Forecast: React.FC = () => {
       <div className="body">
           { forecast.map((item, index) => {
             return <Temperature key={index} 
+            index={index.toString()}
             variant={index === 0 && forecast.length <= 3 ?  'full' : 'half'} info={item}
             temperature={ getTemperatureCondition(item.main.temp) } />
           })}   

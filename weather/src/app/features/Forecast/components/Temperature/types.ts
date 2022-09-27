@@ -6,5 +6,6 @@ export type TemperatureType = {
   variant?: 'full' | 'half';
   temperature?: 'warm' | 'cold' | 'hot';
   icon?: string;
+  index?: string;
   info?: TemperatureResponseType;
 } & React.HTMLAttributes<HTMLDivElement>;

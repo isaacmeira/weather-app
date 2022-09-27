@@ -8,7 +8,7 @@ const Input: React.FC<InputType> = ({ content, className }) => {
   return (
     <div className={cn('input', `input--${className}`)}>
       <span>icon</span>
-      <input >{content}</input>
+      <input>{content}</input>
     </div>
   )
 }

@@ -12,7 +12,7 @@ const Main: React.FC = () => {
   const background = useBackgroundHook();
 
   return (
-  <Container background={{url: background, filter: 'darker'}}>
+  <Container background={{url: background}}>
     <Forecast />
   </Container>)
 }

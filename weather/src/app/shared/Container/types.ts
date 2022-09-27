@@ -5,6 +5,6 @@ export type ContainerType = {
   className?: string;
   background?: {
     url: string;
-    filter: 'lighter' | 'darker' | 'blur';
+    filter?: 'lighter' | 'darker' | 'blur';
   };
 } & React.HTMLAttributes<HTMLDivElement>;

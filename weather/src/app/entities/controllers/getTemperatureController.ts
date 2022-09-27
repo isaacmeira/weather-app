@@ -14,7 +14,12 @@ const getTemperatureController = async (
     return data;
   });
 
-  return Promise.resolve(response.list);
+  // return different days forecast for 3 days
+  const forecast = response.list.filter((item: any, index: number) => {
+    return index % 5 === 0;
+  });
+
+  return Promise.resolve(forecast);
 };
 
 export default getTemperatureController;
