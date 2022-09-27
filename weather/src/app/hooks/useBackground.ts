@@ -7,7 +7,7 @@ export function useBackgroundHook(): string {
 
   useEffect(() => {
     getBackgroundController().then(background => setBackground(background));
-  }, [backGround]);
+  }, []);
 
   return backGround;
 }

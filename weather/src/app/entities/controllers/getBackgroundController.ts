@@ -1,11 +1,11 @@
 import getDataFromApi from '../../services/getDataFromApi';
 import { CONSTANTS } from './controllers.constants';
 
-const getBackgroundController = async () => {
+const getBackgroundController = async (params?: unknown) => {
   const uri = CONSTANTS.BING_URI;
   const method = 'GET';
 
-  const response = await getDataFromApi(uri, method).then(data => {
+  const response = await getDataFromApi(uri, method, params).then(data => {
     return data;
   });
 
