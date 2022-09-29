@@ -6,4 +6,5 @@ export const CONSTANTS = {
   ICON_URI: 'https://openweathermap.org/img/wn/',
 
   FORECAST_DAYS_QUANTITY: 15, // 5 hours forecast for 3 days
+  OPEN_CAGE_URI: 'https://api.opencagedata.com/geocode/v1/json',
 };

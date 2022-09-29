@@ -8,8 +8,13 @@ import Temperature from './components/Temperature';
 
 import './styles.scss'
 
+export type ForecastProps = {
+  forecast: Array<TemperatureResponseType>
+}
 
-const Forecast: React.FC = () => {
+
+const Forecast: React.FC<ForecastProps> = ({forecast}) => {
+
 
   const getTemperatureCondition = useCallback((temperature: number) => {
 
@@ -19,8 +24,6 @@ const Forecast: React.FC = () => {
     return temperatureCondition;
 
   }, []);
-
-  const forecast: Array<TemperatureResponseType> = useTemperatureHook(1, 2, {units: 'metric'});
 
   return (
     <div className="forecast">

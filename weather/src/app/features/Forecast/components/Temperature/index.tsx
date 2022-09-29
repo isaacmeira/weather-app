@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 
 import type { TemperatureType } from './types';
 import cn from 'classnames';
@@ -6,16 +6,24 @@ import cn from 'classnames';
 import './styles.scss'
 import Typography from '../../../../shared/Typography ';
 import convertDate from '../../../../helpers/convertDate';
+import convertTemp from '../../../../helpers/convertTemp';
 import Icons from '../../../../assets/icon';
 
 
 const Temperature: React.FC<TemperatureType> = ({ index, variant, info, temperature }) => {
 
+  const [isCelsius, setIsCelsius] = useState(true);
+
+  const handleToggle = useCallback(() => {
+    setIsCelsius(!isCelsius);
+  }, [isCelsius]);
+
   const memoizedFullData = useMemo(() => (
     <div className="text__container">
       <Typography variant='bold' size={30} content={convertDate(info?.dt_txt)} />
-      <Typography size={25} content={`${info?.main.temp} °C`} />
 
+      <Typography onClick={handleToggle} size={25} content={convertTemp(info?.main.temp, isCelsius)} />
+      
       <Typography variant='bold' margin={{top: 30, bottom: 30}} size={35} content={info?.weather[0].description} />
 
       <Typography  size={25} content={`Vento: ${info?.wind.speed} Km/h`} />
@@ -28,7 +36,7 @@ const Temperature: React.FC<TemperatureType> = ({ index, variant, info, temperat
   const memoizedHalfData = useMemo(() => (
     <div className="text__container">
       <Typography variant='bold' size={30} content={convertDate(info?.dt_txt)} />
-      <Typography size={25} content={`${info?.main.temp} °C`} />
+      <Typography size={25} content={convertTemp(info?.main.temp, isCelsius)} />
     </div>
   ),[]);
 
